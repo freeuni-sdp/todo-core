@@ -13,7 +13,7 @@ public class TaskEntityId {
 	public TaskEntityId(String id) {
 		final int cutIndex = 3;
 		this.partitionKey = id.substring(0, 3);
-		this.rowKey = id.substring(cutIndex+1, id.length()-1);
+		this.rowKey = id.substring(cutIndex, id.length());
 	}
 	
 	public String getId() {

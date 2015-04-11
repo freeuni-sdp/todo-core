@@ -10,6 +10,8 @@
 	<name>todo-core</name>
 
 	<build>
+		<testSourceDirectory>test</testSourceDirectory>
+
 		<finalName>todo-core</finalName>
 		<plugins>
 			<plugin>
@@ -58,11 +60,11 @@
 
 	<dependencies>
 
-			<dependency>
-				<groupId>com.microsoft.windowsazure.storage</groupId>
-				<artifactId>microsoft-windowsazure-storage-sdk</artifactId>
-				<version>1.1.0</version>
-			</dependency>
+		<dependency>
+			<groupId>com.microsoft.windowsazure.storage</groupId>
+			<artifactId>microsoft-windowsazure-storage-sdk</artifactId>
+			<version>1.1.0</version>
+		</dependency>
 
 
 		<dependency>
@@ -82,7 +84,24 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.3.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.test-framework.providers</groupId>
+			<artifactId>jersey-test-framework-provider-inmemory</artifactId>
+		</dependency>
 
 	</dependencies>
 	<properties>
