@@ -28,6 +28,10 @@ public class FakeRepository implements TaskRepository {
 		return map.containsKey(id);
 	}
 	
+	public void clear() {
+		this.map.clear();
+	}
+	
 	@Override
 	public void insertOrUpdate(TaskEntity task) throws StorageException {
 	    TaskEntityId id = new TaskEntityId(task.getPartitionKey(), task.getRowKey());

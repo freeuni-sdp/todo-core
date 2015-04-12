@@ -1,7 +1,15 @@
 package ge.edu.freeuni.sdp.todo.core;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class TaskDo {
+
+	@XmlElement
 	private String text;
+	
+	@XmlElement
 	private String id;
 	
 	public String getText() {
@@ -50,5 +58,4 @@ public class TaskDo {
 			return false;
 		return true;
 	}
-
 }
