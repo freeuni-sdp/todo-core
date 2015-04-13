@@ -7,7 +7,7 @@ public interface TaskRepository {
 	public abstract void insertOrUpdate(TaskEntity task)
 			throws StorageException;
 
-	public abstract void delete(String id) throws StorageException;
+	public abstract TaskEntity delete(String id) throws StorageException;
 
 	public abstract TaskEntity find(String id) throws StorageException;
 

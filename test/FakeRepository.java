@@ -39,8 +39,8 @@ public class FakeRepository implements TaskRepository {
 	}
 
 	@Override
-	public void delete(String id) throws StorageException {
-		map.remove(id);
+	public TaskEntity delete(String id) throws StorageException {
+		return map.remove(id);
 	}
 	
 	@Override

@@ -19,10 +19,12 @@ public class CloudTaskRepository implements TaskRepository {
 
 	
 	@Override
-	public void delete(String id) throws StorageException {
+	public TaskEntity delete(String id) throws StorageException {
 		TaskEntity task = find(id);
+		if (task==null) return task;
 		TableOperation operation = TableOperation.delete(task);
 		table.execute(operation);
+		return null;
 	}
 
 	@Override
