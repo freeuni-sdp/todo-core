@@ -18,7 +18,14 @@
 
 	<div id="container">
 		<p>
-			<span>Click on item to select if for UPDATE or DELETE. Mutiselect items by CTRL+CLICK.</span>
+			<span><strong>Select REST service to use:</strong></span><br>
+			<input type="radio" name="uriradio" value="webapi/todos">cloud data storage (persistent). URI: webapi/todos<br>
+			<input type="radio" name="uriradio" value="webapi/memtodos" checked="checked">in-memory data storage (temporary). URI: webapi/memtodos
+		</p>
+	
+		<p>
+			<span>Click on item to select if for UPDATE or DELETE.<br>
+			Mutiselect items by CTRL+CLICK.</span>
 		</p>
 
 		<input type="text" id="text-input"></input>

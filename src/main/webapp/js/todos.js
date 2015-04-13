@@ -1,6 +1,7 @@
   var serviceUri = "webapi/memtodos";
-
+  
   function doFill() {
+    $( "#task-list" ).empty();
     $.ajax({
       url: serviceUri,
       type: 'GET',
@@ -62,7 +63,13 @@
   
   $(function() {
 
-      $( "#create-button" ).click(
+	  $( "input:radio[name='uriradio']" ).change(
+		    function(){	
+		    	serviceUri =  $( "input:radio[name='uriradio']:checked" ).val();
+		    	doFill();
+	    	});  
+	  
+	  $( "#create-button" ).click(
    		  function() {
             var value = $ ( "#text-input" ).val();
             var task = { text : value };
