@@ -1,13 +1,13 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.todo.data;
 
 import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.table.*;
 
-public class CloudTaskRepository implements TaskRepository {
+public class CloudRepository implements Repository {
 
 	private CloudTable table;
 
-	public CloudTaskRepository(CloudTable table) {
+	public CloudRepository(CloudTable table) {
 		this.table = table;
 	}
 
@@ -21,10 +21,10 @@ public class CloudTaskRepository implements TaskRepository {
 	@Override
 	public TaskEntity delete(String id) throws StorageException {
 		TaskEntity task = find(id);
-		if (task==null) return task;
+		if (task==null) return null;
 		TableOperation operation = TableOperation.delete(task);
 		table.execute(operation);
-		return null;
+		return task;
 	}
 
 	@Override

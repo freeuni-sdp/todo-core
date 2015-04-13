@@ -1,5 +1,5 @@
 import ge.edu.freeuni.sdp.todo.core.TaskDo;
-import ge.edu.freeuni.sdp.todo.core.TaskEntity;
+import ge.edu.freeuni.sdp.todo.data.TaskEntity;
 
 import java.util.*;
 
@@ -15,7 +15,7 @@ import org.junit.Test;
 
 import com.microsoft.azure.storage.StorageException;
 
-public class TestTodoResource extends JerseyTest {
+public class TestTaskService extends JerseyTest {
 
 	/*
 	HTTP  |              /todos   	            	|            /todos/{ID}
@@ -28,7 +28,7 @@ public class TestTodoResource extends JerseyTest {
 	
 	@Override
 	protected Application configure() {
-		return new ResourceConfig(FakeResource.class);
+		return new ResourceConfig(FakeTaskService.class);
 	}
 
 	// +++ GET List +++ 

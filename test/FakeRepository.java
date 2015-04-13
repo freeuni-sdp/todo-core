@@ -1,17 +1,15 @@
 
-import ge.edu.freeuni.sdp.todo.core.TaskEntity;
-import ge.edu.freeuni.sdp.todo.core.TaskEntityId;
-import ge.edu.freeuni.sdp.todo.core.TaskRepository;
+
+import ge.edu.freeuni.sdp.todo.data.InMemoryRepository;
+import ge.edu.freeuni.sdp.todo.data.Repository;
+import ge.edu.freeuni.sdp.todo.data.TaskEntity;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.microsoft.azure.storage.StorageException;
-
-public class FakeRepository implements TaskRepository {
+public class FakeRepository extends InMemoryRepository implements Repository {
 
 	private static FakeRepository instance;
-	private Map<String, TaskEntity> map;
 
 	public static FakeRepository instance() {
 		if (instance==null) {
@@ -19,9 +17,10 @@ public class FakeRepository implements TaskRepository {
 		}
 		return instance;
 	}
+
 	
 	public FakeRepository(Map<String, TaskEntity> map) {
-		this.map = map;
+		super(map);
 	}
 	
 	public boolean contains(String id) {
@@ -30,26 +29,5 @@ public class FakeRepository implements TaskRepository {
 	
 	public void clear() {
 		this.map.clear();
-	}
-	
-	@Override
-	public void insertOrUpdate(TaskEntity task) throws StorageException {
-	    TaskEntityId id = new TaskEntityId(task.getPartitionKey(), task.getRowKey());
-		map.put(id.getId(), task);
-	}
-
-	@Override
-	public TaskEntity delete(String id) throws StorageException {
-		return map.remove(id);
-	}
-	
-	@Override
-	public TaskEntity find(String id) throws StorageException {
-		return map.get(id);
-	}
-	
-	@Override
-	public Iterable<TaskEntity> getAll() {
-		return map.values();
 	}
 }

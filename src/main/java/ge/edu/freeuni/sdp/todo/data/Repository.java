@@ -1,8 +1,8 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.todo.data;
 
 import com.microsoft.azure.storage.StorageException;
 
-public interface TaskRepository {
+public interface Repository {
 
 	public abstract void insertOrUpdate(TaskEntity task)
 			throws StorageException;

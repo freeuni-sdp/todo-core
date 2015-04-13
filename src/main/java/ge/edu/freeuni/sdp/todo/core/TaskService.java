@@ -1,5 +1,9 @@
 package ge.edu.freeuni.sdp.todo.core;
 
+import ge.edu.freeuni.sdp.todo.data.RepositoryFactory;
+import ge.edu.freeuni.sdp.todo.data.TaskEntity;
+import ge.edu.freeuni.sdp.todo.data.Repository;
+
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +15,9 @@ import javax.ws.rs.core.*;
 import com.microsoft.azure.storage.StorageException;
 
 @Path("todos")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
-public class TodosResource {
+@Consumes( { MediaType.APPLICATION_JSON})
+@Produces( { MediaType.APPLICATION_JSON})
+public class TaskService {
 
 	/*
 	HTTP  |              /todos   	            	|            /todos/{ID}
@@ -28,7 +32,7 @@ public class TodosResource {
 	@Context
 	private UriInfo uriInfo;
 
-	public TaskRepository getRepository() throws StorageException {
+	public Repository getRepository() throws StorageException {
 		return RepositoryFactory.create();
 	}
 

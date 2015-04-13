@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.todo.data;
 
 public class TaskEntityId {
 	

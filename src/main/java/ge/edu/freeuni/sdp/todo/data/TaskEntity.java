@@ -1,4 +1,6 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.todo.data;
+
+import ge.edu.freeuni.sdp.todo.core.TaskDo;
 
 import com.microsoft.azure.storage.table.TableServiceEntity;
 

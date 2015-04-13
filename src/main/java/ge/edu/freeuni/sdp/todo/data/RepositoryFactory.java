@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.todo.data;
 
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
@@ -8,8 +8,8 @@ import com.microsoft.azure.storage.table.*;
 
 public class RepositoryFactory {
 	
-	public static TaskRepository create() throws StorageException {
-		return new CloudTaskRepository(getTable());
+	public static Repository create() throws StorageException {
+		return new CloudRepository(getTable());
 	}
 
 	private static CloudTable getTable() throws StorageException {
