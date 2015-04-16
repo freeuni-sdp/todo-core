@@ -39,7 +39,7 @@
 	<distributionManagement>
 		<repository>
 			<id>freeuni-sdp-azure-ftp</id>
-			<url>ftp://waws-prod-am2-019.ftp.azurewebsites.windows.net/</url>
+			<url>ftp://waws-prod-ch1-011.ftp.azurewebsites.windows.net/site/wwwroot/bin/jetty-distribution-9.1.2.v20140210/webapps/</url>
 		</repository>
 	</distributionManagement>
 

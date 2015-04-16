@@ -1,1 +1,6 @@
 language: java
+
+deploy:
+   provider: heroku
+   api_key: "9e75fcb8-b584-4c7c-a296-1221abff6b15"
+   app: freeuni-sdp-todo

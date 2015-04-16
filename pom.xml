@@ -14,6 +14,7 @@
 
 		<finalName>todo-core</finalName>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -24,6 +25,29 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+            <execution>
+                <phase>package</phase>
+                <goals><goal>copy</goal></goals>
+                <configuration>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>org.mortbay.jetty</groupId>
+                            <artifactId>jetty-runner</artifactId>
+                            <version>7.5.4.v20111024</version>
+                            <destFileName>jetty-runner.jar</destFileName>
+                        </artifactItem>
+                    </artifactItems>
+                </configuration>
+            </execution>
+        </executions>
+      </plugin>
+
 		</plugins>
 
 		<extensions>
@@ -39,7 +63,7 @@
 	<distributionManagement>
 		<repository>
 			<id>freeuni-sdp-azure-ftp</id>
-			<url>ftp://waws-prod-am2-019.ftp.azurewebsites.windows.net/</url>
+			<url>ftp://waws-prod-ch1-011.ftp.azurewebsites.windows.net/site/wwwroot/bin/jetty-distribution-9.1.2.v20140210/webapps/</url>
 		</repository>
 	</distributionManagement>
 
