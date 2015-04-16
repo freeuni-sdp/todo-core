@@ -50,23 +50,7 @@
 
 		</plugins>
 
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ftp</artifactId>
-				<version>1.0-beta-6</version>
-			</extension>
-		</extensions>
-
 	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>freeuni-sdp-azure-ftp</id>
-			<url>ftp://waws-prod-ch1-011.ftp.azurewebsites.windows.net/site/wwwroot/bin/jetty-distribution-9.1.2.v20140210/webapps/</url>
-		</repository>
-	</distributionManagement>
-
 
 	<dependencyManagement>
 		<dependencies>

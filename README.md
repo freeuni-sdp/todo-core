@@ -4,7 +4,7 @@ todo-core microservice webapi
 [![Build Status](https://travis-ci.org/freeuni-sdp/todo-core.svg?branch=master)](https://travis-ci.org/freeuni-sdp/todo-core)
 
 
-Base IRI: http://freeuni-sdp-todo-core.azurewebsites.net/todo-core/
+Base IRI: http://freeuni-sdp-todo.herokuapp.com/webapi/todos
 
 HTTP  |  /todos   |  /todos/{ID}
 ------|-----------|---------
