@@ -1,0 +1,114 @@
+FORMAT: 1A
+HOST: http://freeuni-sdp-todo.herokuapp.com/webapi
+
+# todo-core
+
+todo-core is a simple API allowing consumers to view, add, update and delete their tasks.
+
+All operations use the task data object. It has following attributes:
+
++ id - unique ID of the task in form of a string, assigned by system
++ text - arbitrary text content of a task, assigned by user
+
+# todo-core API Root [/todos]
+
+## List all tasks [GET]
+
+Returns all tasks on the server.
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "text":"Pay the bill.",
+                    "id":"7b5be1f4-78f9-4e32-8b75-a7e87afec329"
+                },
+                {
+                    "text":"Clean up the car.",
+                    "id":"952daf28-1ff6-4a98-8a82-635480693aa4"
+                }
+            ]
+
+## Retrive a single task [GET/{task_id}]
+
+Returns a task object by it's ID if found.
+
+
++ Parameters
+    + task_id (required, string, `"0b3211d3-76c6-456d-8971-20aa277bfc76"`) ... ID of the Task is a system generated random string
+
++ Response 200 (application/json)
+
+                {
+                    "text":"Call mom!",
+                    "id":"0b3211d3-76c6-456d-8971-20aa277bfc76"
+                }
+
+## Create a new task [POST]
+
+You may create your own task using this action. It takes a JSON
+object containing a task.
+
++ text (string) - Arbitrary text content
++ id (string) - optional, will be ignored. A new id will be assigned 
+
++ Request (application/json)
+
+            {
+                "text":"Call mom!",
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /741340b7-1d03-45ac-a828-0d1430747b34
+
+    + Body
+
+            {
+                "text":"Call dad!",
+                "id":"741340b7-1d03-45ac-a828-0d1430747b34"
+            }
+
+## Update an existing task [PUT/{task_id}]
+
+You may update an existing task using this action. It takes a JSON
+object containing a task.
+
++ text (string) - Arbitrary text content
++ id (string) - ID of an existing task
+
++ Parameters
+    + task_id (required, string, `"0b3211d3-76c6-456d-8971-20aa277bfc76"`) ... ID of the Task is a system generated random string
+
++ Request (application/json)
+
+            {
+                "text":"New text!",
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /741340b7-1d03-45ac-a828-0d1430747b34
+
+    + Body
+
+            {
+                "text":"New text!",
+                "id":"741340b7-1d03-45ac-a828-0d1430747b34"
+            }
+            
+## Delete an existing task [DELETE/{task_id}]
+
+You may delete an existing task using this action.
+
+
++ Parameters
+    + task_id (required, string, `"0b3211d3-76c6-456d-8971-20aa277bfc76"`) ... ID of the Task is a system generated random string
+
++ Response 200 (application/json)
