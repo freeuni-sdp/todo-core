@@ -30,7 +30,7 @@ public class RepositoryFactory {
 		final String tableName = "tasks";
 		CloudTable cloudTable;
 		try {
-			cloudTable = new CloudTable(tableName, tableClient);
+			cloudTable = tableClient.getTableReference(tableName);
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 			return null;

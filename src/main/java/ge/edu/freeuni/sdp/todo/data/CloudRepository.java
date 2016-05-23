@@ -1,7 +1,10 @@
 package ge.edu.freeuni.sdp.todo.data;
 
-import com.microsoft.azure.storage.*;
-import com.microsoft.azure.storage.table.*;
+
+import com.microsoft.azure.storage.StorageException;
+import com.microsoft.azure.storage.table.CloudTable;
+import com.microsoft.azure.storage.table.TableOperation;
+import com.microsoft.azure.storage.table.TableQuery;
 
 public class CloudRepository implements Repository {
 
